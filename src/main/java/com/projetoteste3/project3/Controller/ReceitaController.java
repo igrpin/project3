@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.projetoteste3.project3.Service.ReceitaService;
@@ -32,13 +31,16 @@ public class ReceitaController {
 	public String listaReceitas(Model model) {
 		List<Receita> receitas = rs.findAll();
 		model.addAttribute("receitas", receitas);
+		System.out.println(receitas.get(0).getDataReceita());
 		return "receita";
 		
 	}
 	
 	
 	@PostMapping
-	public void cadastrarReceita(Receita receita) {
+	public String cadastrarReceita(Receita receita) {
+		
 		rs.save(receita);
+		return "postSucesso";
 	}
 }

@@ -12,11 +12,13 @@
 		<table>
 			<td>ID</td>
 			<td>Valor</td>
+			<td>Data da inserção</td>
 		
 			<th:block th:each="receita:${receitas}">
 				<tr>
 					<td th:text="${receita.id}"></td>
 					<td th:text="${receita.valorReceita}"></td>
+					<td th:text="${#dates.format(receita.dataReceita, 'dd-MM-yyyy')}"></td>
 				</tr>
 			</th:block>
 		</table>

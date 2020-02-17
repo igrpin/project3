@@ -1,11 +1,14 @@
 package com.projetoteste3.project3.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="receita")
@@ -17,11 +20,11 @@ public class Receita {
 	private Long id;
 	
 	@Column(name="valor_receita")
+	@NotBlank
 	private float valorReceita;
 	
-	// @Column(name="data_receita")
-	// @Temporal(javax.persistence.TemporalType.DATE)
-	// private Instant dataReceita;
+	 @Column(name="data_receita")
+	 private Date dataReceita;
 	
 	@Column(name="categoria_receita_id")
 	private Integer categoriaReceitaId;
@@ -47,13 +50,13 @@ public class Receita {
 		this.valorReceita = valorReceita;
 	}
 
-//	public Instant getDataReceita() {
-//		return dataReceita;
-//	}
-//
-//	public void setDataReceita(Instant dataReceita) {
-//		this.dataReceita = dataReceita;
-//	}
+	public Date getDataReceita() {
+		return dataReceita;
+	}
+
+	public void setDataReceita(Date dataReceita) {
+		this.dataReceita = dataReceita;
+	}
 
 	public Integer getCategoriaReceitaId() {
 		return categoriaReceitaId;
