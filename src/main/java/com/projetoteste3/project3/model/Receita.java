@@ -1,6 +1,8 @@
 package com.projetoteste3.project3.model;
 
-import java.sql.Date;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,32 +10,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="receita")
+@Table(name = "receita")
 public class Receita {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name = "id")
 	private Long id;
-	
-	@Column(name="valor_receita")
-	@NotBlank
-	private float valorReceita;
-	
-	 @Column(name="data_receita")
-	 private Date dataReceita;
-	
-	@Column(name="categoria_receita_id")
+
+	@Column(name = "valor_receita")
+	private BigDecimal valorReceita;
+
+	@Column(name = "data_receita")
+	private java.sql.Timestamp dataReceita = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+
+	@Column(name = "categoria_receita_id")
 	private Integer categoriaReceitaId;
 
-	
-	
-	
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -42,19 +37,19 @@ public class Receita {
 		this.id = id;
 	}
 
-	public float getValorReceita() {
+	public BigDecimal getValorReceita() {
 		return valorReceita;
 	}
 
-	public void setValorReceita(float valorReceita) {
+	public void setValorReceita(BigDecimal valorReceita) {
 		this.valorReceita = valorReceita;
 	}
 
-	public Date getDataReceita() {
+	public Timestamp getDataReceita() {
 		return dataReceita;
 	}
 
-	public void setDataReceita(Date dataReceita) {
+	public void setDataReceita(Timestamp dataReceita) {
 		this.dataReceita = dataReceita;
 	}
 
@@ -65,5 +60,5 @@ public class Receita {
 	public void setCategoriaReceitaId(Integer categoriaReceitaId) {
 		this.categoriaReceitaId = categoriaReceitaId;
 	}
-	
+
 }

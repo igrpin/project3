@@ -1,6 +1,7 @@
 package com.projetoteste3.project3.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,14 @@ public class ReceitaService implements ReceitaServiceImpl {
 	@Override
 	public void save(Receita receita) {
 		rr.save(receita);
+	}
+
+	public Optional<Receita> findById(long id) {
+		return rr.findById(id);
+	}
+
+	public void delete(Receita receita) {
+		rr.delete(receita);
+		
 	}
 }
