@@ -45,19 +45,19 @@ public class Despesa {
 		this.valorDespesa = valorDespesa;
 	}
 
-	public Timestamp getDataReceita() {
+	public Timestamp getDataDespesa() {
 		return dataDespesa;
 	}
 
-	public void setDataReceita(Timestamp dataDespesa) {
+	public void setDataDespesa(Timestamp dataDespesa) {
 		this.dataDespesa = dataDespesa;
 	}
 
-	public Integer getCategoriaReceitaId() {
+	public Integer getCategoriaDespesaId() {
 		return categoriaDespesaId;
 	}
 
-	public void setCategoriaReceitaId(Integer categoriaDespesaId) {
+	public void setCategoriaDespesaId(Integer categoriaDespesaId) {
 		this.categoriaDespesaId = categoriaDespesaId;
 	}
 
